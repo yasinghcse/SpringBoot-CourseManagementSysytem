@@ -3,7 +3,9 @@ package org.java.springboot.course;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+import org.java.springboot.Lesson.Lesson;
 import org.java.springboot.topic.Topic;
 
 @Entity
@@ -51,5 +53,4 @@ public class Course {
 	public void setTopic(Topic topic) {
 		this.topic = topic;
 	}
-	
 }

@@ -1,27 +1,31 @@
-package org.java.springboot.topic;
+package org.java.springboot.Lesson;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import org.java.springboot.course.Course;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.java.springboot.topic.Topic;
 
 @Entity
-public class Topic {
+public class Lesson {
 	
 	@Id
 	private String id;
 	private String name;
 	private String description;
 	
-	public Topic(){
+	@ManyToOne
+	private Course course;
+	
+	public Lesson(){
 		
 	}
-	public Topic(String id, String name, String description){
+	public Lesson(String id, String name, String description, String courseId){
 		this.id= id;
 		this.name= name;
 		this.description= description;
+		this.course = new Course(courseId, "", "", "");
 	}
 	
 	public String getId() {
@@ -42,5 +46,12 @@ public class Topic {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public Course getCourse() {
+		return course;
+	}
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
 	
 }
