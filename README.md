@@ -1,6 +1,6 @@
 # SpringBoot-CourseManagementSysytem
 This is Course management system built using Spring boot
-This project simple course management system having below mapping:
+This project is simple course management system having below mapping:
           Topic -> Course -> Lesson
 
 To built this project below technologies is used:
